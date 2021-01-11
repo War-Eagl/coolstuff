@@ -11,13 +11,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/09/cool-deep-learning-stuff-1.html" />
-<meta property="og:url" content="https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/09/cool-deep-learning-stuff-1.html" />
+<link rel="canonical" href="https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/10/cool-deep-learning-stuff-1.html" />
+<meta property="og:url" content="https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/10/cool-deep-learning-stuff-1.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-01-09T00:00:00-06:00" />
+<meta property="article:published_time" content="2021-01-10T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/09/cool-deep-learning-stuff-1.html","@type":"BlogPosting","headline":"Cool Deep Learning Stuff - 1","dateModified":"2021-01-09T00:00:00-06:00","datePublished":"2021-01-09T00:00:00-06:00","author":{"@type":"Person","name":"Vishal"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/09/cool-deep-learning-stuff-1.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+{"url":"https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/10/cool-deep-learning-stuff-1.html","@type":"BlogPosting","headline":"Cool Deep Learning Stuff - 1","dateModified":"2021-01-10T00:00:00-06:00","datePublished":"2021-01-10T00:00:00-06:00","author":{"@type":"Person","name":"Vishal"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://war-eagl.github.io/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/10/cool-deep-learning-stuff-1.html"},"description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/coolstuff/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://war-eagl.github.io/coolstuff/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/coolstuff/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,15 +72,15 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Cool Deep Learning Stuff - 1</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-09T00:00:00-06:00" itemprop="datePublished">
-        Jan 9, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Cool Deep Learning Stuff - 1</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-10T00:00:00-06:00" itemprop="datePublished">
+        Jan 10, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Vishal</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
-      37 min read
+      40 min read
     
 </span></p>
 
@@ -130,6 +130,10 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#What-the-hell-is-this-?">What the hell is this ? </a></li>
 <li class="toc-entry toc-h1"><a href="#Lets-begin...">Lets begin... </a></li>
+<li class="toc-entry toc-h1"><a href="#Loading-our-big-guns...">Loading our big guns... </a></li>
+<li class="toc-entry toc-h1"><a href="#Building-Models...">Building Models... </a></li>
+<li class="toc-entry toc-h1"><a href="#Its--showtime...">Its  showtime... </a></li>
+<li class="toc-entry toc-h1"><a href="#Convolutional-Neural-Network">Convolutional Neural Network </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -5363,27 +5367,32 @@ imagenette2/val/n03000684/n03000684_17902.JPEG
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing</span> <span class="kn">import</span> <span class="n">image_dataset_from_directory</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
-<span class="n">adam</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">()</span>
-</pre></div>
-
-    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loading-our-big-guns...">
+<a class="anchor" href="#Loading-our-big-guns..." aria-hidden="true"><span class="octicon octicon-link"></span></a>Loading our big guns...<a class="anchor-link" href="#Loading-our-big-guns..."> </a>
+</h1>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://media.giphy.com/media/xUPGcwhBE9SCKGRlJe/giphy.gif" alt=""></p>
 
 </div>
-    
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider the 9.6k images we downloaded as bullets, and our model is a gun. In order to shoot a bullet from a gun, first you need to load it into a magazine and that magazine needs to be loaded into the gun. Similarly, first you need to divide the images into batches, and each batch is iteratively fed into the model. Considering 9.6k images and the need to be load them into batches of size 32 is definitely a daunting task. So we'll call for help...</p>
+<p><code>tf.Dataset</code> object is our friend here. It iteratively returns images of given batchsize. To convert images into <code>tf.Dataset</code> we can use <code>image_dataset_from_directory</code> from <code>tensorflow.keras.preprocessing</code></p>
 
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5419,6 +5428,38 @@ Found 3925 files belonging to 10 classes.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The <code>image_dataset_from_directory</code> automatically extracts the class labels from the <strong>folder names</strong> if the data is present in the format mentioned above.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The default batch size is 32 and default image size is (256,256). You can read more about <code>image_dataset_from_directory</code> <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image_dataset_from_directory">here</a>
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Wonderful, now let's look at the images, that are reshaped to (256,256) and converted into <code>tf.tensors</code>. Tensors are same as <code>np.ndarrays</code> but we can do GPU computations in it.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5462,6 +5503,47 @@ Found 3925 files belonging to 10 classes.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since we have loaded the images, we now move on to the most exciting part...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Building-Models...">
+<a class="anchor" href="#Building-Models..." aria-hidden="true"><span class="octicon octicon-link"></span></a>Building Models...<a class="anchor-link" href="#Building-Models..."> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://i.gifer.com/Rg9m.gif" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is the most exciting part. To begin with, we'll build a naive, fully connected neural network. A fully connected neural network is a neural network in which every unit is connected with every other unit in the next immediate layer. It is the most primitive of the neural networks, but performs reasonably well. You can read more about fully connected network, <a href="https://towardsdatascience.com/under-the-hood-of-neural-networks-part-1-fully-connected-5223b7f78528">here</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will use <code>keras.models.Sequential</code> api to add layers of network one by one.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5486,6 +5568,38 @@ Found 3925 files belonging to 10 classes.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The first layer is <code>Flatten</code> layer. Fully connected networks accept only a single dimensional input. Since all the color images are 3 dimensional (x, y and 3 RGB channels), we can’t directly pass images directly into fully connected network. Thats why we have to flatten the images using <code>Flatten</code> layer and convert it to single diemsion
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>The <code>keras.layers.Dense</code> is name for fully connected layer in keras.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As building the model is done, we'll compile the model by defining the loss function and optimizer. Loss is the difference between the predictions of the neural network and actual target. Initially loss is high, as the model weights are random. Then there comes our protogonist <strong>optimizer</strong>. Optimizer is the heart of any machine learning model, that passes the input images to the model and gets the prediction (<strong>forward pass</strong>), calculates loss, computes gradients of Loss with respect to every weights and adjusts the weights accordingly (<strong>backward pass</strong>) for next forward pass. We'll see more about optimizers in forth coming blog posts. For now, we'll use <code>Adam</code> which is a defacto optimizer</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5535,6 +5649,35 @@ _________________________________________________________________
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Its--showtime...">
+<a class="anchor" href="#Its--showtime..." aria-hidden="true"><span class="octicon octicon-link"></span></a>Its  showtime...<a class="anchor-link" href="#Its--showtime..."> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://i.kym-cdn.com/entries/icons/original/000/025/605/showtime.jpg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-error">
+    <svg class="octicon octicon-alert octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+    <strong>Warning: </strong>Please separate the <code>train_data</code> and <code>val_data</code>  into images and labels separately to pass it into fit method. 
+</div>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5553,6 +5696,14 @@ _________________________________________________________________
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now that we have all the ingredients ready, we'll now train the model using <code>fit</code> method of the model. We'll first run it for 20 epochs (its a fancy word for number of times the model is ran through entire training set) and also validate it on validation data</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5633,6 +5784,14 @@ Epoch 20/20
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Going good, we'll fit 10 more epochs.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5693,6 +5852,31 @@ Epoch 10/10
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>WHAT THE HELL!!!</strong> Even after training for 30 epochs the metrics are looking really bad. Calm down. We'll do one better...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Convolutional-Neural-Network">
+<a class="anchor" href="#Convolutional-Neural-Network" aria-hidden="true"><span class="octicon octicon-link"></span></a>Convolutional Neural Network<a class="anchor-link" href="#Convolutional-Neural-Network"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Convolutional  Neural Networks are neural networks that replaces matrix multiplication with mathematical operation called convolution. Its most suitable for images as this provides translational invariance. You can read more about convolution <a href="https://en.wikipedia.org/wiki/Convolution#:~:text=In%20mathematics%20(in%20particular,%20functional,the%20process%20of%20computing%20it.">here</a>.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -5916,6 +6100,14 @@ Epoch 10/10
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, the losses look better now. But we can still do better. Generally the models are trained in millions of images for thousands of hours to get state of the art results. But we don't have that much time or computation power. But don't worry, we'll have our friend Transfer Learning, to our aid, where we get state of the art results withing very few data. We'll see about Transfer Learning, in our next blog spot.  Feel free to comment about this blog and reach me out on soci</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
@@ -5928,7 +6120,7 @@ Epoch 10/10
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/09/cool-deep-learning-stuff-1.html" hidden></a>
+</script><a class="u-url" href="/coolstuff/deep%20learning/computer%20vision/theory/tensorflow/2021/01/10/cool-deep-learning-stuff-1.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
