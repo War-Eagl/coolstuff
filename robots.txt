@@ -1,1 +1,1 @@
-Sitemap: https://war-eagl.github.io/coolstuff/sitemap.xml
+Sitemap: https://war-eagl.github.io/sitemap.xml
