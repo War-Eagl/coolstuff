@@ -364,7 +364,19 @@ Found 3925 files belonging to 10 classes.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As a benchmark, all the significant models are trained on <strong>imagenet</strong> dataset and most of them have their weights available for us to download. Thats why imagenet dataset is so famous and important. In this case we will download <strong>Resnet50V2</strong> model (more on architectures in later posts...) from tensorflow repository and call it as <code>base_model</code>. We can access the individual layers of a model by using <code>layers</code> attribute of <code>model</code> class. We'll then freeze the first 150 layers of the model as we don't need to change the learnt representation of elementary shapes by setting <code>layers.trainable</code> to <code>False</code></p>
+<p>As a benchmark, all the significant models are trained on <strong>imagenet</strong> dataset and most of them have their weights available for us to download. Thats why imagenet dataset is so famous and important. In this case we will download <strong>Resnet50V2</strong> model (more on architectures in later posts...) from tensorflow repository and call it as <code>base_model</code>. We can access the individual layers of a model by using <code>layers</code> attribute of <code>model</code> class. We'll then freeze the first 150 layers of the model as we don't need to change the learnt representation of elementary shapes by setting <code>layers.trainable</code> to <code>False</code>. We then manually create the final part of the network, by converting the square output of our CNN to single dimension using <code>GlobalMaxPooling2d()</code> and <code>Flattten()</code> layer. Then we connect fully connected layers having 1024 hidden units and 10 output units (number of classes...).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>More on <code>Dropout</code> layer later...
+</div>
 
 </div>
 </div>
