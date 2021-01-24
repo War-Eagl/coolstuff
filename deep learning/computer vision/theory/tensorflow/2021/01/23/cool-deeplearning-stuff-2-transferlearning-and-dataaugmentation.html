@@ -11,13 +11,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Discovering the cool stuff across the tech field." />
 <meta property="og:description" content="Discovering the cool stuff across the tech field." />
-<link rel="canonical" href="http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/22/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html" />
-<meta property="og:url" content="http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/22/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html" />
+<link rel="canonical" href="http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/23/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html" />
+<meta property="og:url" content="http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/23/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html" />
 <meta property="og:site_name" content="thecoolstuff" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-01-22T00:00:00-06:00" />
+<meta property="article:published_time" content="2021-01-23T00:00:00-06:00" />
 <script type="application/ld+json">
-{"url":"http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/22/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html","@type":"BlogPosting","headline":"Cool Deep Learning Stuff - 2 : Transfer Learning, Data augmentation and Progressive Resizing","dateModified":"2021-01-22T00:00:00-06:00","datePublished":"2021-01-22T00:00:00-06:00","author":{"@type":"Person","name":"Vishal"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/22/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html"},"description":"Discovering the cool stuff across the tech field.","@context":"https://schema.org"}</script>
+{"url":"http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/23/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html","@type":"BlogPosting","headline":"Cool Deep Learning Stuff - 2 : Transfer Learning, Data augmentation and Progressive Resizing","dateModified":"2021-01-23T00:00:00-06:00","datePublished":"2021-01-23T00:00:00-06:00","author":{"@type":"Person","name":"Vishal"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://thecoolstuff.tech/deep%20learning/computer%20vision/theory/tensorflow/2021/01/23/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html"},"description":"Discovering the cool stuff across the tech field.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://thecoolstuff.tech/feed.xml" title="thecoolstuff" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -78,8 +78,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Cool Deep Learning Stuff - 2 : Transfer Learning, Data augmentation and Progressive Resizing</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-22T00:00:00-06:00" itemprop="datePublished">
-        Jan 22, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Cool Deep Learning Stuff - 2 : Transfer Learning, Data augmentation and Progressive Resizing</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-01-23T00:00:00-06:00" itemprop="datePublished">
+        Jan 23, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Vishal</span></span>
@@ -598,6 +598,57 @@ Epoch 3/3
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Have a look at this cute little fella, <img src="my_icons/cat.jpg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's name him, Jack. Say hii to Jack. Let me show you few more pictures,</p>
+<p><figure>
+  
+    <img class="docimage" src="/images/copied_from_nb/my_icons/cat2.jpg" alt="" style="max-width: 350px">
+    
+    
+</figure>
+        <img src="my_icons/cat3.jpg" width="350"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/images/copied_from_nb/my_icons/cat4.jpg" alt="" style="max-width: 350px">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>train_datagen = ImageDataGenerator(
+    rescale = 1.0/255,
+    shear_range=0.2,
+    zoom_range = 0.2,
+    rotation_range = 0.125
+)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Progressive-Resizing">
 <a class="anchor" href="#Progressive-Resizing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Progressive Resizing<a class="anchor-link" href="#Progressive-Resizing"> </a>
 </h1>
@@ -976,7 +1027,7 @@ Found 3925 images belonging to 10 classes.
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/deep%20learning/computer%20vision/theory/tensorflow/2021/01/22/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html" hidden></a>
+</script><a class="u-url" href="/deep%20learning/computer%20vision/theory/tensorflow/2021/01/23/cool-deeplearning-stuff-2-transferlearning-and-dataaugmentation.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
