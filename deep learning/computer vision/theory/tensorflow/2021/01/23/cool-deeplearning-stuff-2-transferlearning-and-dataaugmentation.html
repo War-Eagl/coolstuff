@@ -86,7 +86,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      10 min read
     
 </span></p>
 
@@ -613,7 +613,7 @@ Epoch 3/3
     
     
 </figure>
-        <img src="my_icons/cat3.jpg" width="350"></p>
+      </p>
 
 </div>
 </div>
@@ -635,6 +635,23 @@ Epoch 3/3
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>The first image is still Jack right? Zoomed in a bit, but still its our Jack. What about the second image? That's definitely Jack, but flipped horizontally. So if we train a CNN classifier to detect whether this is Jack or not, all the three images must be classified as Jack. This process, to tweak the input image little bit to create new data samples is called, <strong>Data Augmentation</strong></p>
+<p>Along with Transfer Learning, Data Augmentation also revolutionized deep learning by enabling us to multiply our small dataset into manifolds. Apart from more training samples, it also helps the model to generalize better, because instead of a model remembering a cat that lies on right side of bed as Jack, now the model should remember the facial features of Jack. In short, it prevents the model performing a cheap trick called <strong>Overfitting</strong>(More on it, in later blog posts...)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let's come back to <code>ImageDataGenerator</code> class. By saying we're doing data augmentation, that means we are feeding the model with multiple copies of same but slightly tweaked images. But creating multiple copies will cost us lot of storage if we are dealing with large dataset. This is where <code>ImageDataGenerator</code> helps us. It basically acts as the bridge between images in hard disk and our Model in RAM or VRAM. While the training is in progress, it will fetch few images and apply the augmentation operations specified by users and eventually multiply the number of images and feed it to model so that the extra copies of images aren't saved. You can see the available data augmentations <a href="https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image/ImageDataGenerator">here</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 
 <pre><code>train_datagen = ImageDataGenerator(
     rescale = 1.0/255,
@@ -649,9 +666,29 @@ Epoch 3/3
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash flash-error">
+    <svg class="octicon octicon-alert octicon octicon-alert octicon octicon-alert" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+    <strong>Warning: </strong>As I said before, its beneficial to draw parallels between real life and training models. Here looking at a cat flipped upside down, might not really make sense. Because, we aren’t going to see upside down cats in real life that often. So its wise to set <code>vertical_flip</code> to false. Similarly, we should think whether a particular data augmentation will make sense with respect to the real life problem we are dealing with, before applying it.
+</div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Progressive-Resizing">
 <a class="anchor" href="#Progressive-Resizing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Progressive Resizing<a class="anchor-link" href="#Progressive-Resizing"> </a>
 </h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With both <strong>Transfer Learning</strong> and <strong>Data Augmentation</strong> in hand, lets do something really really cool. So the size of image is directly proportional to training time. That is pretty intuitive right? Large size means more pixels, so more time to go through a single image. But according to data augmentation, the model should be resilient to minor tweaks in data. Which means image with smaller size than actual training image should teach "some amount" to the model. So here's the idea, we'll first train the same model with much smaller image size, then progressively increase the size of image. So first we instantiate the data generator with images resized to 64x64 (remember the original image sizes were 256x256)</p>
+
 </div>
 </div>
 </div>
@@ -695,6 +732,14 @@ Found 3925 images belonging to 10 classes.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then, we create same old model and train it with 64x64 images for 1 epoch</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -772,6 +817,14 @@ Found 3925 images belonging to 10 classes.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This epoch went very fast, but accuracy is not good. Now we'll reinstantiate the data generators with 128x128 images and repeat the process.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -812,6 +865,18 @@ Found 3925 images belonging to 10 classes.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<div class="flash">
+    <svg class="octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info octicon octicon-info" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path></svg>
+    <strong>Note: </strong>We aren’t reinstantiating new model. But instead we are running second epoch on the model which is previously trained onn 64x64 images. This is essentially transfer learning.
+</div>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -824,20 +889,6 @@ Found 3925 images belonging to 10 classes.
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>474/474 [==============================] - 122s 256ms/step - loss: 0.4963 - accuracy: 0.8516 - auc: 0.9827 - val_loss: 0.3126 - val_accuracy: 0.9017 - val_auc: 0.9922
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
